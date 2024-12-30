@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div id="page1">
+            <h1>Patient Appointment System</h1>
+            <form id="appointmentForm">
+                <label for="name">Patient Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="severity">Severity Level:</label>
+                <select id="severity">
+                    <option value="4">Severity critical: Accident, Heart Attack, Stroke</option>
+                    <option value="3">Severity severe: Influenza, Diabetes, Asthma</option>
+                    <option value="2">Severity high: Common Cold, Seasonal Allergies, Skin Infections</option>
+                    <option value="1">Severity low: Headache, Stomachache, Fever</option>
+                </select>
+
+                <button type="submit">Add Patient</button>
+            </form>
+
+            <div id="patientList"></div>
+            <button id="viewAppointmentsButton" onclick="displayAppointments()">View Appointments</button>
+        </div>
+
+        <div id="page2" style="display: none;">
+            <h2>Appointment List</h2>
+            <div id="appointmentsList"></div>
+            <button id="backButton" onclick="goBack()">Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
