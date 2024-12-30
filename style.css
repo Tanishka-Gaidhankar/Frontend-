@@ -1,0 +1,113 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    position: relative; 
+    transition: transform 0.3s;
+    box-sizing: border-box; 
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00796b;
+}
+
+input[type="text"] {
+    padding: 15px;
+    border: 2px solid #00796b;
+    border-radius: 10px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; 
+}
+
+input[type="text"]:focus {
+    border-color: #004d40;
+    box-shadow: 0 0 5px rgba(0, 77, 64, 0.5);
+}
+
+button {
+    background: linear-gradient(135deg, #8e44ad, #3498db); 
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    width: 100%; 
+    transition: background 0.3s, transform 0.2s;
+    font-size: 16px;
+    box-sizing: border-box; 
+    margin-top: 5%;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #732d91, #2980b9); 
+    transform: translateY(-2px);
+}
+
+#synonymResults {
+    margin-top: 20px;
+}
+
+#synonymResults ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#synonymResults li {
+    background-color: #e0f2f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#synonymResults li:hover {
+    background-color: #b2dfdb;
+    transform: translateY(-1px);
+}
+
+
+.suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: calc(100% - 2px); 
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+
