@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tanishka's Portolio </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/640e8da6a5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="" class="logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-text">
+            <p>AI Enthutiast and Developer</p>
+            <h1>Hi , I am <span>  Tanishka Gaidhankar</span></h1>
+        </div>
+    </div>
+</div>    
+
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title"> About Me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore iusto, nesciunt necessitatibus explicabo vitae, enim excepturi, quo minus impedit obcaecati totam labore quos mollitia eligendi maxime cupiditate nostrum ipsam voluptatum.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+ 
+                <div class="table-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>HTML , CSS</span></li>
+                        <li><span>Javasrcipt and Node.js</span></li>
+                        <li><span>Figma</span><br>UI/UX</li>
+                        <li><span>React.js and MongoDB</span></li>
+                    </ul>
+                </div>
+
+                <div class="table-contents" id="education">
+                    <ul>
+                        <li><span>2021</span><br>10th passed</li>
+                        <li><span>2023</span><br>12th passed</li>
+                        <li><span>2023</span><br>1st year of B.Tech</li>
+                        <li><span>2024</span><br>2nd year of B.Tech</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="work-list">
+
+            <div class="work">
+                <img src="images/synonym.png" alt="1">
+                <div class="layer">
+                    <h3>Synonym Finder</h3>
+                    <p>The Synonym Finder web application is a tool designed to
+                        help users discover synonyms for any word they input. This
+                        application provides a fast and simple way to enhance
+                        vocabulary.</p>
+                        <a href="https://github.com/Tanishka-Gaidhankar/Frontend-/tree/main/Synonym%20Finder"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                </div>
+
+            <div class="work">
+                <img src="images/tinytake.png" alt="2">
+                <div class="layer">
+                    <h3>News Analyzer</h3>
+                    <p>The News Analyzer , summaries the news article which has been uploaded by the user . It not only summaries but also analyzes the sentiment of the article and categories it as positiveor negetive</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            </div>
+
+            </div>
+    <a href="#" class="btn">See more</a>
+</div>
+</div>
+
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>tanishka.gaidhankar@gmail.com</p>
+                <p>9405xxxxxx</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/tanishka-gaidhankar-b187aa28a/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Tanishka-Gaidhankar"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="Tanishka Resume.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+<div class="copyright">
+    <p>Developed and Designed By Tanishka Gaidhankar</p>
+</div>
+</div>
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tablecontents = document.getElementsByClassName("table-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        
+        for(tablecontent of tablecontents){
+            tablecontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzLAxoxBEcpvOHmKYUdV0MUfRWMqNAN7-bBKwIepBv1m7awMDKP9aO1mwR1Gk144xEWOA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = documnet.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
